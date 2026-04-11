@@ -1,10 +1,16 @@
 "use client";
-import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
 
-export const Timeline = ({ data }) => {
-  const ref = useRef(null);
-  const containerRef = useRef(null);
+import { useScroll, useTransform, motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import type { Experience } from "../constants";
+
+interface TimelineProps {
+  data: Experience[];
+}
+
+export const Timeline = ({ data }: TimelineProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -12,7 +18,7 @@ export const Timeline = ({ data }) => {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
     }
-  }, [ref]);
+  }, [ref, data]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -47,8 +53,11 @@ export const Timeline = ({ data }) => {
                 <h3>{item.date}</h3>
                 <h3>{item.job}</h3>
               </div>
-              {item.contents.map((content, index) => (
-                <p className="mb-3 font-normal text-neutral-400" key={index}>
+              {item.contents.map((content, contentIndex) => (
+                <p
+                  className="mb-3 font-normal text-neutral-400"
+                  key={contentIndex}
+                >
                   {content}
                 </p>
               ))}
@@ -57,7 +66,7 @@ export const Timeline = ({ data }) => {
         ))}
         <div
           style={{
-            height: height + "px",
+            height: `${height}px`,
           }}
           className="absolute md:left-1 left-1 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
         >

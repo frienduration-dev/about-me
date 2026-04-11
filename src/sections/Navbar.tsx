@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+
 function Navigation() {
   return (
     <ul className="nav-ul">
@@ -26,6 +27,7 @@ function Navigation() {
     </ul>
   );
 }
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -39,6 +41,7 @@ const Navbar = () => {
             Michael John
           </a>
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
           >

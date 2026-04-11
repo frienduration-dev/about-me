@@ -1,12 +1,25 @@
+import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import HeroText from "../components/HeroText";
-import ParallaxBackground from "../components/parallaxBackground";
-import { Astronaut } from "../components/Astronaut";
+import type { RootState } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import { easing } from "maath";
-import { Suspense } from "react";
+import HeroText from "../components/HeroText";
+import ParallaxBackground from "../components/parallaxBackground";
+import { Astronaut } from "../components/Astronaut";
 import Loader from "../components/Loader";
+
+function Rig() {
+  useFrame((state: RootState, delta: number) => {
+    easing.damp3(
+      state.camera.position,
+      [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
+      0.5,
+      delta
+    );
+  });
+  return null;
+}
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -22,8 +35,8 @@ const Hero = () => {
           <Suspense fallback={<Loader />}>
             <Float>
               <Astronaut
-                scale={isMobile && 0.23}
-                position={isMobile && [0, -1.5, 0]}
+                scale={isMobile ? 0.23 : 0.3}
+                position={isMobile ? ([0, -1.5, 0] as const) : ([1.3, -1, 0] as const)}
               />
             </Float>
             <Rig />
@@ -33,16 +46,5 @@ const Hero = () => {
     </section>
   );
 };
-
-function Rig() {
-  return useFrame((state, delta) => {
-    easing.damp3(
-      state.camera.position,
-      [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
-      0.5,
-      delta
-    );
-  });
-}
 
 export default Hero;

@@ -6,16 +6,46 @@ Source: https://sketchfab.com/3d-models/tenhun-falling-spaceman-fanart-9fd80b6a2
 Title: Tenhun Falling spaceman (FanArt)
 */
 
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
-import { useMotionValue, useSpring } from "motion/react";
+import { useEffect, useRef } from "react";
+import { useAnimations, useGLTF } from "@react-three/drei";
+import { useSpring, useMotionValue } from "motion/react";
 import { useFrame } from "@react-three/fiber";
+import type { AnimationClip, Bone, Group, Material, SkinnedMesh } from "three";
 
-export function Astronaut(props) {
-  const group = useRef();
+type SpacemanNodes = {
+  metarig_rootJoint: Bone;
+  Cube001_0: SkinnedMesh;
+  Cube005_0: SkinnedMesh;
+  Cube002_0: SkinnedMesh;
+  Plane_0: SkinnedMesh;
+  Cube008_0: SkinnedMesh;
+  Cube004_0: SkinnedMesh;
+  Cube003_0: SkinnedMesh;
+  Cube_0: SkinnedMesh;
+  Cube009_0: SkinnedMesh;
+  Cube011_0: SkinnedMesh;
+};
+
+type SpacemanMaterials = {
+  "AstronautFallingTexture.png": Material;
+};
+
+type SpacemanGLTF = {
+  nodes: SpacemanNodes;
+  materials: SpacemanMaterials;
+  animations: AnimationClip[];
+};
+
+interface AstronautProps {
+  scale?: number;
+  position?: readonly [number, number, number] | [number, number, number];
+}
+
+export function Astronaut(props: AstronautProps) {
+  const group = useRef<Group>(null);
   const { nodes, materials, animations } = useGLTF(
     "/models/tenhun_falling_spaceman_fanart.glb"
-  );
+  ) as unknown as SpacemanGLTF;
   const { actions } = useAnimations(animations, group);
   useEffect(() => {
     if (animations.length > 0) {
@@ -29,7 +59,9 @@ export function Astronaut(props) {
     ySpring.set(-1);
   }, [ySpring]);
   useFrame(() => {
-    group.current.position.y = ySpring.get();
+    if (group.current) {
+      group.current.position.y = ySpring.get();
+    }
   });
   return (
     <group
@@ -37,8 +69,8 @@ export function Astronaut(props) {
       {...props}
       dispose={null}
       rotation={[-Math.PI / 2, -0.2, 2.2]}
-      scale={props.scale || 0.3}
-      position={props.position || [1.3, -1, 0]}
+      scale={props.scale ?? 0.3}
+      position={props.position ?? [1.3, -1, 0]}
     >
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model">

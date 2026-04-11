@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
+
+type AlertKind = "success" | "danger";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,12 +13,16 @@ const Contact = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [alertType, setAlertType] = useState("success");
+  const [alertType, setAlertType] = useState<AlertKind>("success");
   const [alertMessage, setAlertMessage] = useState("");
-  const handleChange = (e) => {
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const showAlertMessage = (type, message) => {
+
+  const showAlertMessage = (type: AlertKind, message: string) => {
     setAlertType(type);
     setAlertMessage(message);
     setShowAlert(true);
@@ -23,7 +30,8 @@ const Contact = () => {
       setShowAlert(false);
     }, 5000);
   };
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -42,29 +50,31 @@ const Contact = () => {
       );
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "You message has been sent!");
+      showAlertMessage("success", "Your message has been sent!");
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
-      showAlertMessage("danger", "Somthing went wrong!");
+      console.error(error);
+      showAlertMessage("danger", "Something went wrong!");
     }
   };
+
   return (
     <section className="relative flex items-center c-space section-spacing">
       <Particles
         className="absolute inset-0 -z-50"
         quantity={100}
         ease={80}
-        color={"#ffffff"}
+        color="#ffffff"
         refresh
       />
       {showAlert && <Alert type={alertType} text={alertMessage} />}
       <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
         <div className="flex flex-col items-start w-full gap-5 mb-10">
-          <h2 className="text-heading">Let's Talk</h2>
+          <h2 className="text-heading">Let&apos;s Talk</h2>
           <p className="font-normal text-neutral-400">
-            Whether you're loking to build a new website, improve your existing
-            platform, or bring a unique project to life, I'm here to help
+            Whether you&apos;re looking to build a new website, improve your
+            existing platform, or bring a unique project to life, I&apos;m here
+            to help
           </p>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
@@ -107,11 +117,10 @@ const Contact = () => {
             <textarea
               id="message"
               name="message"
-              type="text"
-              rows="4"
+              rows={4}
               className="field-input field-input-focus"
               placeholder="Share your thoughts..."
-              autoComplete="message"
+              autoComplete="off"
               value={formData.message}
               onChange={handleChange}
               required

@@ -1,5 +1,13 @@
-import { motion, AnimatePresence } from "motion/react";
-const Alert = ({ type, text }) => {
+import { AnimatePresence, motion } from "motion/react";
+
+type AlertType = "success" | "danger";
+
+interface AlertProps {
+  type: AlertType;
+  text: string;
+}
+
+const Alert = ({ type, text }: AlertProps) => {
   const alertVarients = {
     hidden: { opacity: 0, y: 50, scale: 0.8 },
     visible: { opacity: 1, y: 0, scale: 1 },

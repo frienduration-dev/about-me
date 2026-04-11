@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+
 const CopyEmailButton = () => {
   const [copied, setCopied] = useState(false);
   const email = "frienduration.jr@gmail.com";
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(email);
+    void navigator.clipboard.writeText(email);
     setCopied(true);
 
     setTimeout(() => {
@@ -14,6 +15,7 @@ const CopyEmailButton = () => {
   };
   return (
     <motion.button
+      type="button"
       onClick={copyToClipboard}
       whileHover={{ y: -5 }}
       whileTap={{ scale: 1.05 }}

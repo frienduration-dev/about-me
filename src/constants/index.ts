@@ -1,4 +1,41 @@
-export const myProjects = [
+export interface ProjectTag {
+  id: number;
+  name: string;
+  path: string;
+}
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  subDescription: string[];
+  href: string;
+  logo: string;
+  image: string;
+  tags: ProjectTag[];
+}
+
+export interface Social {
+  name: string;
+  href: string;
+  icon: string;
+}
+
+export interface Experience {
+  title: string;
+  job: string;
+  date: string;
+  contents: string[];
+}
+
+export interface Review {
+  name: string;
+  username: string;
+  body: string;
+  img: string;
+}
+
+export const myProjects: Project[] = [
   {
     id: 1,
     title: "E-commerce Platform",
@@ -14,26 +51,10 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/accessories.jpg",
     tags: [
-      {
-        id: 1,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 2,
-        name: ".Net",
-        path: "/assets/logos/dotnet.svg",
-      },
-      {
-        id: 3,
-        name: "Ef Core",
-        path: "/assets/logos/efcore.png",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "C#", path: "/assets/logos/csharp.svg" },
+      { id: 2, name: ".Net", path: "/assets/logos/dotnet.svg" },
+      { id: 3, name: "Ef Core", path: "/assets/logos/efcore.png" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
   {
@@ -51,26 +72,10 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/auth-system.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Auth0",
-        path: "/assets/logos/auth0.svg",
-      },
-      {
-        id: 2,
-        name: "React",
-        path: "/assets/logos/react.svg",
-      },
-      {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Auth0", path: "/assets/logos/auth0.svg" },
+      { id: 2, name: "React", path: "/assets/logos/react.svg" },
+      { id: 3, name: "SQLite", path: "/assets/logos/sqlite.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
   {
@@ -88,26 +93,10 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/blazor-app.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
-      },
-      {
-        id: 2,
-        name: ".NET Core",
-        path: "/assets/logos/dotnetcore.svg",
-      },
-      {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Blazor", path: "/assets/logos/blazor.svg" },
+      { id: 2, name: ".NET Core", path: "/assets/logos/dotnetcore.svg" },
+      { id: 3, name: "SQLite", path: "/assets/logos/sqlite.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
   {
@@ -125,26 +114,10 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/game-engine.jpg",
     tags: [
-      {
-        id: 1,
-        name: "C++",
-        path: "/assets/logos/cplusplus.svg",
-      },
-      {
-        id: 2,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 3,
-        name: "Git",
-        path: "/assets/logos/git.svg",
-      },
-      {
-        id: 4,
-        name: "Microsoft",
-        path: "/assets/logos/microsoft.svg",
-      },
+      { id: 1, name: "C++", path: "/assets/logos/cplusplus.svg" },
+      { id: 2, name: "C#", path: "/assets/logos/csharp.svg" },
+      { id: 3, name: "Git", path: "/assets/logos/git.svg" },
+      { id: 4, name: "Microsoft", path: "/assets/logos/microsoft.svg" },
     ],
   },
   {
@@ -162,26 +135,10 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/wordpress-theme.jpg",
     tags: [
-      {
-        id: 1,
-        name: "WordPress",
-        path: "/assets/logos/wordpress.svg",
-      },
-      {
-        id: 2,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
-      },
-      {
-        id: 3,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
-      },
-      {
-        id: 4,
-        name: "Vite.js",
-        path: "/assets/logos/vitejs.svg",
-      },
+      { id: 1, name: "WordPress", path: "/assets/logos/wordpress.svg" },
+      { id: 2, name: "HTML5", path: "/assets/logos/html5.svg" },
+      { id: 3, name: "CSS3", path: "/assets/logos/css3.svg" },
+      { id: 4, name: "Vite.js", path: "/assets/logos/vitejs.svg" },
     ],
   },
   {
@@ -199,36 +156,16 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/elearning.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
-      },
-      {
-        id: 2,
-        name: "Azure",
-        path: "/assets/logos/azure.svg",
-      },
-      {
-        id: 3,
-        name: "Stripe",
-        path: "/assets/logos/stripe.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Blazor", path: "/assets/logos/blazor.svg" },
+      { id: 2, name: "Azure", path: "/assets/logos/azure.svg" },
+      { id: 3, name: "Stripe", path: "/assets/logos/stripe.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
 ];
 
-export const mySocials = [
-  {
-    name: "WhatsApp",
-    href: "",
-    icon: "/assets/socials/whatsApp.svg",
-  },
+export const mySocials: Social[] = [
+  { name: "WhatsApp", href: "", icon: "/assets/socials/whatsApp.svg" },
   {
     name: "Linkedin",
     href: "https://www.linkedin.com/in/ali-sanati/",
@@ -241,7 +178,7 @@ export const mySocials = [
   },
 ];
 
-export const experiences = [
+export const experiences: Experience[] = [
   {
     title: "Software Developer",
     job: "Security & Defense Projects",
@@ -276,7 +213,8 @@ export const experiences = [
     ],
   },
 ];
-export const reviews = [
+
+export const reviews: Review[] = [
   {
     name: "Jack",
     username: "@jack",

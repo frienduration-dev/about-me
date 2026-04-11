@@ -1,5 +1,14 @@
+import type { CSSProperties, RefObject } from "react";
 import { motion } from "motion/react";
-const Card = ({ style, text, image, containerRef }) => {
+
+interface CardProps {
+  style?: CSSProperties;
+  text?: string;
+  image?: string;
+  containerRef: RefObject<HTMLElement | null>;
+}
+
+const Card = ({ style, text, image, containerRef }: CardProps) => {
   return image && !text ? (
     <motion.img
       className="absolute w-15 cursor-grab"
@@ -9,6 +18,7 @@ const Card = ({ style, text, image, containerRef }) => {
       drag
       dragConstraints={containerRef}
       dragElastic={1}
+      alt=""
     />
   ) : (
     <motion.div

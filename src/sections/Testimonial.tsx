@@ -1,10 +1,12 @@
 import { twMerge } from "tailwind-merge";
 import Marquee from "../components/Marquee";
 import { reviews } from "../constants";
+import type { Review } from "../constants";
+
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-const ReviewCard = ({ img, name, username, body }) => {
+const ReviewCard = ({ img, name, username, body }: Review) => {
   return (
     <figure
       className={twMerge(
@@ -14,8 +16,8 @@ const ReviewCard = ({ img, name, username, body }) => {
       <div className="flex flex-row items-center gap-2">
         <img
           className="rounded-full bg-white/10"
-          width="32"
-          height="32"
+          width={32}
+          height={32}
           alt=""
           src={img}
         />
