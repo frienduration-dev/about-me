@@ -17,11 +17,13 @@ const About = () => {
             alt=""
           />
           <div className="z-10">
-            <p className="headtext">Hi, I&apos;m Michael John</p>
+            <p className="headtext">Hi, I&apos;m David Yuan</p>
             <p className="subtext">
-              Over a dedicated, I am continuosly grow with web and mobile
-              applications. Also I have majored in Devops and Intelligence
-              Science.
+              Senior Software Engineer with a strong track record of architecting, building, and scaling distributed backend
+              platforms across Google, Paxos, Goldman Sachs, and Akamai. Deep expertise in cloud-native microservices,
+              data engineering, financial-grade infrastructure, and large-scale production systems, with hands-on
+              experience in Python, Java, Go, TypeScript, SQL, GCP, AWS, Kubernetes, Kafka, BigQuery, PostgreSQL,
+              Redis, and Terraform.
             </p>
           </div>
           <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
@@ -36,7 +38,7 @@ const About = () => {
             </p>
             <Card
               style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="SOLID"
+              text="Microsevice"
               containerRef={grid2Container}
             />
             <Card
@@ -51,7 +53,7 @@ const About = () => {
             />
             <Card
               style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-              text="Design Principles"
+              text="Event Driven"
               containerRef={grid2Container}
             />
             <Card

@@ -165,51 +165,69 @@ export const myProjects: Project[] = [
 ];
 
 export const mySocials: Social[] = [
-  { name: "WhatsApp", href: "", icon: "/assets/socials/whatsApp.svg" },
+  {
+    name: "Gmail",
+    href: "mailto:david.yuan0405@gmail.com",
+    icon: "/assets/socials/gmail.svg",
+  },
+  {
+    name: "Telegram",
+    href: "https://t.me/david_yuan2",
+    icon: "/assets/socials/telegram.svg"
+  },
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/",
-    icon: "/assets/socials/linkedIn.svg",
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/",
-    icon: "/assets/socials/instagram.svg",
-  },
+    href: "https://www.linkedin.com/in/david-yuan-b36b70a6",
+    icon: "/assets/socials/linkedin.svg",
+  }
 ];
 
 export const experiences: Experience[] = [
   {
-    title: "Software Developer",
-    job: "Security & Defense Projects",
-    date: "2021-2023",
+    title: "Google",
+    job: "Senior Software Engineer",
+    date: "07/2022-Present",
     contents: [
-      "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-      "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-      "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-      "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+      "Architected and scaled high-throughput distributed backend systems for critical product and platform workflows, designing low-latency microservices, gRPC and REST APIs, asynchronous processing layers, and fault-tolerant service boundaries across large-scale production systems.",
+      "Delivered senior-level technical leadership on core platform initiatives, driving architecture decisions, service design, code quality standards, rollout strategies, and cross-team technical alignment for systems with strict SLO, reliability, and operability requirements.",
+      "Built cloud-native services in Python, Java, and Go on GCP, using Kubernetes, Pub/Sub, Bigtable, Spanner, Redis, and GCS to support highly available, scalable, and resilient event-driven workflows.",
+      "Designed and optimized large-scale data platforms that ingested, transformed, and served high-volume product telemetry and behavioral data, leveraging BigQuery, Airflow, SQL, and batch and streaming pipelines to power analytics, experimentation, and feature development.",
+      "Implemented scalable ETL workflows, data models, and data quality frameworks for product intelligence and operational reporting, improving data freshness, schema consistency, lineage visibility, and query performance for downstream consumers.",
     ],
   },
   {
-    title: "Back-End Developer",
-    job: "Car Manufacture",
-    date: "2023-2024",
+    title: "Paxos",
+    job: "Senior Software Engineer",
+    date: "11/2021 – 07/2022",
     contents: [
-      "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-      "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-      "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-      "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-      "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
+      "Built backend systems for regulated financial infrastructure and digital asset platforms, designing secure transaction services, ledger workflows, and auditable APIs for high-integrity payments, settlement, and asset movement use cases.",
+      "Developed resilient microservices in Python and Java using cloud-native architectures, with strong emphasis on correctness, idempotency, reconciliation, and failure recovery across distributed transaction-processing environments.",
+      "Strengthened ledger-adjacent data flows and financial event pipelines using Kafka, PostgreSQL, SQL, and batch and streaming processing patterns, improving traceability, downstream reporting accuracy, and reconciliation efficiency across operational systems.",
+      "Designed data ingestion and normalization workflows for transaction, account, and balance events, enabling more consistent analytics, compliance reporting, and internal financial observability across multiple product surfaces.",
+      "Built scalable ETL workflows, data models, and backend storage patterns for transactional records, improving schema consistency, data lineage, query performance, and trusted access to financial datasets.",
     ],
   },
   {
-    title: "Freelance Developer",
-    job: "Self-Employed",
-    date: "2025-Present",
+    title: "Goldman Sachs",
+    job: "Software Engineer",
+    date: "07/2018 – 11/2021",
     contents: [
-      "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-      "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+      "Engineered scalable backend services and internal financial platforms, building Java and Python microservices, workflow orchestration layers, and integration APIs to support transaction-heavy business operations in a high-reliability environment.",
+      "Designed and implemented service-oriented architecture patterns for enterprise financial applications, improving modularity, maintainability, deployment safety, and system throughput across complex multi-service platforms.",
+      "Built data engineering workflows for operational and analytical use cases, including data ingestion, transformation, and publishing of high-volume financial events using Kafka, SQL, ETL pipelines, and warehouse-oriented data models.",
+      "Developed robust batch and stream processing paths for transaction reporting, operational dashboards, and internal analytics, improving data freshness, reconciliation transparency, and downstream decision support for business and engineering teams.",
+      "Optimized database access, indexing strategy, query performance, and data synchronization patterns across Oracle and PostgreSQL, improving latency and stability for high-value financial workflows.",
+    ],
+  },
+  {
+    title: "Akamai Technologies",
+    job: "Software Engineer Intern",
+    date: "03/2017 – 08/2017",
+    contents: [
+      "Contributed to backend and infrastructure engineering for internet-scale edge, CDN, and delivery systems, working on service components, automation, and operational tooling for highly distributed production environments.",
+      "Built internal tools, automation scripts, and service-supporting utilities in Python and Linux environments to improve system diagnostics, workflow automation, and engineering productivity across large-scale networking and platform operations.",
+      "Assisted with data processing and analysis workflows for service telemetry, log data, and operational metrics, helping improve visibility into performance behavior, accelerate debugging, and strengthen system validation for distributed services.",
+      "Worked with production-oriented engineering practices including testing, code review, performance profiling, and reliability-focused development, gaining early experience with distributed systems, service reliability, and scalable backend software design.",
     ],
   },
 ];

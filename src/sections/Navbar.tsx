@@ -38,7 +38,7 @@ const Navbar = () => {
             href="/"
             className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
           >
-            Michael John
+            David Yuan
           </a>
           <button
             type="button"

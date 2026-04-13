@@ -41,9 +41,9 @@ const Contact = () => {
         "template_17us8im",
         {
           from_name: formData.name,
-          to_name: "Michael John",
+          to_name: "David Yuan",
           from_email: formData.email,
-          to_email: "frienduration.jr@gmail.com",
+          to_email: "david.yuan0405@gmail.com",
           message: formData.message,
         },
         "pn-Bw_mS1_QQdofuV"
@@ -72,7 +72,7 @@ const Contact = () => {
         <div className="flex flex-col items-start w-full gap-5 mb-10">
           <h2 className="text-heading">Let&apos;s Talk</h2>
           <p className="font-normal text-neutral-400">
-            Whether you&apos;re looking to build a new website, improve your
+            Whether you&apos;re looking to build a new project, improve your
             existing platform, or bring a unique project to life, I&apos;m here
             to help
           </p>
