@@ -27,7 +27,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            A Engineer <br /> Dedicated to Crafting
+            An Engineer <br /> Dedicated to Crafting
           </motion.p>
           <motion.div
             variants={variants}
