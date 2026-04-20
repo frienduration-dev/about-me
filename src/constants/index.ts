@@ -167,7 +167,7 @@ export const myProjects: Project[] = [
 export const mySocials: Social[] = [
   {
     name: "Gmail",
-    href: "mailto:david.yuan0405@gmail.com",
+    href: "mailto:davidyuan0158@gmail.com",
     icon: "/assets/socials/gmail.svg",
   },
   {
